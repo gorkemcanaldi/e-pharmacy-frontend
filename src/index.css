@@ -1,0 +1,19 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+  color: var(--main-black);
+  background-color: var(--background-2);
+}
+
+:root {
+  --main-black: #1d1e21;
+  --accent: #59b17a;
+  --accent-2: #e85050;
+  --text: #dcdddf;
+  --background: #e7f1ed;
+  --background-2: #f7f8fa;
+  --background-3: #fff;
+  --buton-hover: #3f945f;
+}
