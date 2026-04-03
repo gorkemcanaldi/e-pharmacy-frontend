@@ -22,3 +22,12 @@ export const RegisterUser = async (data: RegisterInput) => {
   if (!res.ok) throw new Error("Register failed");
   return res.json();
 };
+
+export const refreshToken = async () => {
+  const res = await fetch(`${BASE_URL}/user/refresh`, {
+    method: "POST",
+    credentials: "include",
+  });
+  if (!res.ok) throw new Error("Refresh failed");
+  return res.json();
+};
