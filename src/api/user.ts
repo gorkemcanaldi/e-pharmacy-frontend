@@ -1,6 +1,6 @@
 import type { LoginInput, RegisterInput } from "../types/user";
 
-export const BASE_URL = "https://e-pharmacy-backend-1aik.onrender.com";
+export const BASE_URL = "http://localhost:5000";
 
 export const loginUser = async (data: LoginInput) => {
   const res = await fetch(`${BASE_URL}/user/login`, {
@@ -29,5 +29,6 @@ export const refreshToken = async () => {
     credentials: "include",
   });
   if (!res.ok) throw new Error("Refresh failed");
+
   return res.json();
 };

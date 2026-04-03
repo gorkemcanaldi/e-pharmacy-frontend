@@ -15,16 +15,16 @@ export default function TokenRefresher() {
         try {
           const res = await refreshToken();
           setAccessToken(res.accessToken);
-          toast.success("Oturum yenilendi");
+          toast.success("Oturum yenilendi (24h)");
         } catch {
           toast.error("Oturum süresi doldu, tekrar giriş yapın");
           navigate("/login");
         }
       },
-      13 * 60 * 1000,
+      4 * 60 * 1000,
     );
     return () => clearTimeout(timer);
-  }, [accessToken]);
+  }, [accessToken, setAccessToken, navigate]);
 
   return null;
 }

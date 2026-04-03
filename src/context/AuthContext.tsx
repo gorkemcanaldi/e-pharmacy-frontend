@@ -4,7 +4,18 @@ import type { AuthContextType } from "../types/AuthContextType";
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
 export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
-  const [accessToken, setAccessToken] = useState<string | null>(null);
+  const [accessToken, setAccessTokenState] = useState<string | null>(() =>
+    sessionStorage.getItem("accessToken"),
+  );
+
+  const setAccessToken = (token: string | null) => {
+    setAccessTokenState(token);
+    if (token) {
+      sessionStorage.setItem("accessToken", token);
+    } else {
+      sessionStorage.removeItem("accessToken");
+    }
+  };
 
   const logout = () => {
     setAccessToken(null);

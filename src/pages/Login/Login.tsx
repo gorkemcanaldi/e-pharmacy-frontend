@@ -33,7 +33,7 @@ export default function Login() {
       console.log("Login result:", result);
       navigate("/dashboard");
       if (result) {
-        toast.success("register success.");
+        toast.success("login success.");
       }
     } catch (error) {
       if (error instanceof Error) {
