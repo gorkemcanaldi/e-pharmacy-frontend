@@ -16,6 +16,7 @@
   font-weight: 600;
   font-size: 20px;
   letter-spacing: -0.03em;
+  color: var(--main-black);
 }
 
 .left_right_div {
@@ -65,6 +66,7 @@
   border-radius: 60px;
   outline: none;
   padding-left: 20px;
+  color: var(--main-black);
 }
 .register_input::placeholder {
   color: rgba(29, 30, 33, 0.4);
@@ -80,6 +82,7 @@
   border: 1px solid rgba(29, 30, 33, 0.1);
   border-radius: 60px;
   outline: none;
+  color: var(--main-black);
   padding-left: 20px;
 }
 .register_input_::placeholder {

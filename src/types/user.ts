@@ -8,3 +8,7 @@ export interface RegisterInput {
   email: string;
   password: string;
 }
+
+export type Props = {
+  className?: string;
+};

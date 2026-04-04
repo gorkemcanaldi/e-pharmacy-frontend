@@ -9,6 +9,7 @@
 .header_p {
   font-weight: 600;
   font-size: 24px;
+  color: var(--main-black);
   line-height: 117%;
 }
 

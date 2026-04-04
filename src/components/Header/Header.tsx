@@ -24,7 +24,14 @@ export default function Header() {
   if (location.pathname === "/login" || location.pathname === "/register") {
     return null;
   }
-
+  const titles: Record<string, string> = {
+    "/dashboard": "Dashboard",
+    "/orders": "All orders",
+    "/products": "All products",
+    "/suppliers": "All suppliers",
+    "/customers": "All customers",
+  };
+  const currentTitle = titles[location.pathname] || "";
   return (
     <>
       <div className={style.header}>
@@ -33,8 +40,7 @@ export default function Header() {
           <div>
             <p className={style.header_p}>Medicine store</p>
             <p>
-              {location.pathname === "/dashboard" ? "Dashboard" : null} |{" "}
-              <span>{email}</span>
+              {currentTitle} | <span>{email}</span>
             </p>
           </div>
         </div>
