@@ -8,3 +8,13 @@
   display: flex;
   flex: 1;
 }
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5); /* yarı saydam siyah */
+  z-index: 999; /* sidebar'ın altında, ama content'in üstünde */
+}

@@ -5,8 +5,12 @@ import ProductIcon from "../../icons/ProductIcon";
 import SupplierIcon from "../../icons/SupplierIcon";
 import CustomerIcon from "../../icons/CustomerIcon";
 import style from "./SideBar.module.css";
-
-export default function Sidebar() {
+interface SidebarProps {
+  sideOpen: boolean;
+  toggleSidebar: () => void;
+  handleLogout: () => void;
+}
+export default function Sidebar({ sideOpen, toggleSidebar }: SidebarProps) {
   const location = useLocation();
 
   if (location.pathname === "/login" || location.pathname === "/register") {
@@ -22,22 +26,36 @@ export default function Sidebar() {
   ];
 
   return (
-    <aside className={style.sidebar}>
-      <nav>
-        <ul className={style.ul_}>
-          {links.map(({ path, icon: Icon }) => (
-            <Link to={path} key={path} className={style.li_}>
-              <Icon
-                className={
-                  location.pathname === path
-                    ? `${style.icon} ${style.active}`
-                    : style.icon
-                }
-              />
-            </Link>
-          ))}
-        </ul>
-      </nav>
-    </aside>
+    <>
+      <div
+        className={sideOpen ? `${style.sidebar}  ${style.open}` : style.sidebar}
+      >
+        <div className={style.close_side}>
+          <button onClick={toggleSidebar} className={style.side_off}>
+            X
+          </button>
+        </div>
+        <aside>
+          <nav>
+            <ul className={style.ul_}>
+              {links.map(({ path, icon: Icon }) => (
+                <Link to={path} key={path} className={style.li_}>
+                  <Icon
+                    className={
+                      location.pathname === path
+                        ? `${style.icon} ${style.active}`
+                        : style.icon
+                    }
+                  />
+                </Link>
+              ))}
+            </ul>
+          </nav>
+          <div className={style.logout_side}>
+            <img src="/logout.svg" alt="" />
+          </div>
+        </aside>
+      </div>
+    </>
   );
 }

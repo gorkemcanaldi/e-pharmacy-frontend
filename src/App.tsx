@@ -1,26 +1,66 @@
-import { ToastContainer } from "react-toastify";
+import { toast, ToastContainer } from "react-toastify";
 import "./App.css";
 import AppRouter from "./routes/AppRouter";
-import { AuthProvider } from "./context/AuthContext";
-import TokenRefresher from "./components/TokenRefresher";
 import Header from "./components/Header/Header";
 import SideBar from "./components/SideBar/SideBar";
+import { useEffect, useRef, useState } from "react";
+import { useAuth } from "./hooks/useAuth";
+import { refreshToken } from "./api/user";
+import { useNavigate } from "react-router-dom";
 
 function App() {
+  const { accessToken, setAccessToken } = useAuth();
+  const timerSet = useRef(false);
+
+  const navigate = useNavigate();
+  useEffect(() => {
+    if (!accessToken) return;
+    if (timerSet.current) return;
+    timerSet.current = true;
+    console.log("Refresh timer triggered");
+    const timer = setTimeout(
+      async () => {
+        console.log("Refresh timer triggered");
+        try {
+          const res = await refreshToken();
+          setAccessToken(res.accessToken);
+          toast.success("Oturum yenilendi (24h)");
+          console.log("refresh isteği ");
+        } catch {
+          toast.error("Oturum süresi doldu, tekrar giriş yapın");
+          navigate("/login");
+        }
+      },
+      4 * 60 * 1000,
+    );
+
+    return () => clearTimeout(timer);
+  }, [accessToken]);
+
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   return (
-    <AuthProvider>
-      <div className="app">
-        <Header />
-        <div className="main">
-          <SideBar />
-          <div className="content">
-            <AppRouter />
-          </div>
+    <div className="app">
+      <Header
+        sideOpen={isSidebarOpen}
+        toggleSidebar={() => setIsSidebarOpen(!isSidebarOpen)}
+      />
+      <div className="main">
+        <SideBar
+          sideOpen={isSidebarOpen}
+          toggleSidebar={() => setIsSidebarOpen(false)}
+        />
+        {isSidebarOpen && (
+          <div
+            className="overlay"
+            onClick={() => setIsSidebarOpen(false)} // overlay'e tıklayınca kapansın
+          />
+        )}
+        <div className="content">
+          <AppRouter />
         </div>
-        <ToastContainer />
-        <TokenRefresher />
       </div>
-    </AuthProvider>
+      <ToastContainer />
+    </div>
   );
 }
 

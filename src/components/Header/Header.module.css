@@ -12,8 +12,47 @@
   color: var(--main-black);
   line-height: 117%;
 }
-
+.logout_head {
+  cursor: pointer;
+}
+.header_lo {
+  cursor: pointer;
+}
 .header_logo {
   display: flex;
   gap: 60px;
+}
+
+.burger {
+  display: none;
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .burger {
+    display: flex;
+    margin-top: 6px;
+    border: none;
+  }
+
+  .header_logo {
+    gap: 16px;
+  }
+  .logout_head {
+    display: none;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 767px) {
+  .burger {
+    display: flex;
+    margin-top: 6px;
+    border: none;
+  }
+
+  .header_logo {
+    gap: 16px;
+  }
+  .logout_head {
+    display: none;
+  }
 }

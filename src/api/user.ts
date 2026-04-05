@@ -42,3 +42,16 @@ export const userInfo = async (accessToken: string) => {
   if (!res.ok) throw new Error("user-info failed");
   return res.json();
 };
+
+export const logoutUser = async (accessToken: string | null) => {
+  const res = await fetch(`${BASE_URL}/user/logout`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: accessToken ? `Bearer ${accessToken} ` : "",
+    },
+    credentials: "include",
+  });
+  if (!res.ok) throw new Error("logout failed");
+  return res.json();
+};

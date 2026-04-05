@@ -1,13 +1,17 @@
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import style from "./Header.module.css";
 import { useEffect, useState } from "react";
-import { userInfo } from "../../api/user";
+import { logoutUser, userInfo } from "../../api/user";
 import { useAuth } from "../../hooks/useAuth";
-
-export default function Header() {
+import BurgerMenu from "../../icons/BurgerMenu";
+interface HeaderProps {
+  toggleSidebar: () => void;
+}
+export default function Header({ toggleSidebar }: HeaderProps) {
   const location = useLocation();
   const [email, setEmail] = useState<string | null>(null);
-  const { accessToken } = useAuth();
+  const { accessToken, setAccessToken } = useAuth();
+  const navigate = useNavigate();
   useEffect(() => {
     const fetchData = async () => {
       if (!accessToken) return;
@@ -32,11 +36,28 @@ export default function Header() {
     "/customers": "All customers",
   };
   const currentTitle = titles[location.pathname] || "";
+
+  const handleLogout = async () => {
+    if (accessToken) await logoutUser(accessToken);
+    setAccessToken(null);
+    navigate("/login");
+  };
+
   return (
     <>
       <div className={style.header}>
         <div className={style.header_logo}>
-          <img src="/e-pharmacy-logo.svg" alt="logo" />
+          <div>
+            <button className={style.burger} onClick={toggleSidebar}>
+              <BurgerMenu />
+            </button>
+          </div>
+          <img
+            onClick={() => navigate("/dashboard")}
+            className={style.header_lo}
+            src="/e-pharmacy-logo.svg"
+            alt="logo"
+          />
           <div>
             <p className={style.header_p}>Medicine store</p>
             <p>
@@ -44,8 +65,8 @@ export default function Header() {
             </p>
           </div>
         </div>
-        <div>
-          <img src="/logout.svg" alt="logout" />
+        <div onClick={handleLogout}>
+          <img className={style.logout_head} src="/logout.svg" alt="logout" />
         </div>
       </div>
     </>
