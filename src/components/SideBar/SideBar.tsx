@@ -5,14 +5,18 @@ import ProductIcon from "../../icons/ProductIcon";
 import SupplierIcon from "../../icons/SupplierIcon";
 import CustomerIcon from "../../icons/CustomerIcon";
 import style from "./SideBar.module.css";
+
 interface SidebarProps {
   sideOpen: boolean;
   toggleSidebar: () => void;
   handleLogout: () => void;
 }
-export default function Sidebar({ sideOpen, toggleSidebar }: SidebarProps) {
+export default function Sidebar({
+  sideOpen,
+  toggleSidebar,
+  handleLogout,
+}: SidebarProps) {
   const location = useLocation();
-
   if (location.pathname === "/login" || location.pathname === "/register") {
     return null;
   }
@@ -52,7 +56,7 @@ export default function Sidebar({ sideOpen, toggleSidebar }: SidebarProps) {
             </ul>
           </nav>
           <div className={style.logout_side}>
-            <img src="/logout.svg" alt="" />
+            <img onClick={handleLogout} src="/logout.svg" alt="" />
           </div>
         </aside>
       </div>

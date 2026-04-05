@@ -1,16 +1,17 @@
 import { useLocation, useNavigate } from "react-router-dom";
 import style from "./Header.module.css";
 import { useEffect, useState } from "react";
-import { logoutUser, userInfo } from "../../api/user";
+import { userInfo } from "../../api/user";
 import { useAuth } from "../../hooks/useAuth";
 import BurgerMenu from "../../icons/BurgerMenu";
 interface HeaderProps {
   toggleSidebar: () => void;
+  handleLogout: () => void;
 }
-export default function Header({ toggleSidebar }: HeaderProps) {
+export default function Header({ toggleSidebar, handleLogout }: HeaderProps) {
   const location = useLocation();
   const [email, setEmail] = useState<string | null>(null);
-  const { accessToken, setAccessToken } = useAuth();
+  const { accessToken } = useAuth();
   const navigate = useNavigate();
   useEffect(() => {
     const fetchData = async () => {
@@ -36,12 +37,6 @@ export default function Header({ toggleSidebar }: HeaderProps) {
     "/customers": "All customers",
   };
   const currentTitle = titles[location.pathname] || "";
-
-  const handleLogout = async () => {
-    if (accessToken) await logoutUser(accessToken);
-    setAccessToken(null);
-    navigate("/login");
-  };
 
   return (
     <>

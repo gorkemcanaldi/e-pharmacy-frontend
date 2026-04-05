@@ -5,14 +5,15 @@ import Header from "./components/Header/Header";
 import SideBar from "./components/SideBar/SideBar";
 import { useEffect, useRef, useState } from "react";
 import { useAuth } from "./hooks/useAuth";
-import { refreshToken } from "./api/user";
+import { logoutUser, refreshToken } from "./api/user";
 import { useNavigate } from "react-router-dom";
 
 function App() {
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const { accessToken, setAccessToken } = useAuth();
   const timerSet = useRef(false);
-
   const navigate = useNavigate();
+
   useEffect(() => {
     if (!accessToken) return;
     if (timerSet.current) return;
@@ -37,23 +38,25 @@ function App() {
     return () => clearTimeout(timer);
   }, [accessToken]);
 
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const handleLogout = async () => {
+    if (accessToken) await logoutUser(accessToken);
+    setAccessToken(null);
+    navigate("/login");
+  };
   return (
     <div className="app">
       <Header
-        sideOpen={isSidebarOpen}
         toggleSidebar={() => setIsSidebarOpen(!isSidebarOpen)}
+        handleLogout={handleLogout}
       />
       <div className="main">
         <SideBar
           sideOpen={isSidebarOpen}
           toggleSidebar={() => setIsSidebarOpen(false)}
+          handleLogout={handleLogout}
         />
         {isSidebarOpen && (
-          <div
-            className="overlay"
-            onClick={() => setIsSidebarOpen(false)} // overlay'e tıklayınca kapansın
-          />
+          <div className="overlay" onClick={() => setIsSidebarOpen(false)} />
         )}
         <div className="content">
           <AppRouter />
