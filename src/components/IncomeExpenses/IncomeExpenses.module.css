@@ -1,0 +1,118 @@
+.wrapper {
+  border: 1px solid rgba(29, 30, 33, 0.1);
+  border-radius: 8px;
+  background-color: var(--background-3);
+  width: 630px;
+  border-collapse: separate; /* önemli */
+
+  height: 446.4px;
+}
+
+.title {
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 133%;
+  color: var(--main-black);
+  text-align: start;
+  background: var(--background);
+  padding: 20px;
+  border-top-left-radius: 8px;
+}
+
+.table {
+  width: 100%;
+}
+
+.th_t {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 129%;
+  padding: 18px;
+  color: rgba(29, 30, 33, 0.4);
+}
+
+td {
+  border-top: 1px solid rgba(29, 30, 33, 0.1);
+}
+.typeIncome {
+  background: rgba(89, 177, 122, 0.1);
+  border-radius: 4px;
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 14px;
+  padding-top: 4px;
+  margin-left: 20px;
+
+  letter-spacing: -0.05em;
+  text-align: center;
+  color: var(--accent);
+}
+
+.typeExpense {
+  background: rgba(232, 80, 80, 0.1);
+  border-radius: 4px;
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 14px;
+  margin-left: 20px;
+  padding-top: 4px;
+  height: 25px;
+  letter-spacing: -0.05em;
+  text-align: center;
+  color: var(--accent-2);
+}
+
+.typeError {
+  width: 80px;
+  height: 25px;
+  padding-top: 4px;
+  padding: 4px 13px;
+  background: rgba(29, 30, 33, 0.1);
+  border-radius: 4px;
+  font-family: var(--font-family);
+  margin-left: 20px;
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: -0.05em;
+  text-align: center;
+  color: var(--main-black);
+}
+
+.amountIncome {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 113%;
+  color: var(--accent);
+  text-align: center;
+  padding-right: 30px;
+}
+
+.amountExpense {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 113%;
+  color: var(--accent-2);
+  text-align: center;
+  padding-right: 20px;
+}
+
+.amountError {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 113%;
+  text-decoration: line-through;
+  color: var(--main-black);
+  text-align: center;
+  padding-right: 20px;
+}
+
+.td {
+  padding: 4px 13.5px;
+  padding-left: 40px;
+  color: rgba(29, 30, 33, 0.8);
+}

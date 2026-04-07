@@ -7,6 +7,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   const [accessToken, setAccessTokenState] = useState<string | null>(() =>
     sessionStorage.getItem("accessToken"),
   );
+  const [loading, setLoading] = useState(false);
 
   const setAccessToken = (token: string | null) => {
     setAccessTokenState(token);
@@ -17,12 +18,10 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     }
   };
 
-  const logout = () => {
-    setAccessToken(null);
-  };
-
   return (
-    <AuthContext.Provider value={{ accessToken, setAccessToken, logout }}>
+    <AuthContext.Provider
+      value={{ accessToken, setAccessToken, setLoading, loading }}
+    >
       {children}
     </AuthContext.Provider>
   );

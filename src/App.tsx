@@ -32,7 +32,7 @@ function App() {
           navigate("/login");
         }
       },
-      4 * 60 * 1000,
+      13 * 60 * 1000,
     );
 
     return () => clearTimeout(timer);

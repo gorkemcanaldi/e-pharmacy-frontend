@@ -7,6 +7,8 @@
 .main {
   display: flex;
   flex: 1;
+  gap: 40px;
+  background-color: var(--background-2);
 }
 
 .overlay {
@@ -15,6 +17,6 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(0, 0, 0, 0.5); /* yarı saydam siyah */
-  z-index: 999; /* sidebar'ın altında, ama content'in üstünde */
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
 }

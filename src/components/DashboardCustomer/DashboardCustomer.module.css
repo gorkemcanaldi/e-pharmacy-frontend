@@ -1,0 +1,33 @@
+.head {
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 133%;
+  color: var(--main-black);
+  text-align: start;
+  background: var(--background);
+  padding: 20px;
+  border-top-left-radius: 8px;
+}
+
+.tablos {
+  border-collapse: collapse;
+  border: 1px solid rgba(29, 30, 33, 0.1);
+  border-radius: 8px;
+  background: var(--background-3);
+}
+
+.table_head_div th,
+.dess td {
+  border: 1px solid rgba(29, 30, 33, 0.1);
+  padding: 18.4px;
+  text-align: left;
+}
+
+.table_head {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 129%;
+  color: rgba(29, 30, 33, 0.4);
+}

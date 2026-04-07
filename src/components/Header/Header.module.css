@@ -4,6 +4,7 @@
   justify-content: space-between;
   padding: 5px 20px;
   border-bottom: 1px solid rgba(29, 30, 33, 0.1);
+  background-color: var(--background-2);
 }
 
 .header_p {
