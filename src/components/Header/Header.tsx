@@ -42,7 +42,7 @@ export default function Header({ toggleSidebar, handleLogout }: HeaderProps) {
     <>
       <div className={style.header}>
         <div className={style.header_logo}>
-          <div>
+          <div className={style.burger_div}>
             <button className={style.burger} onClick={toggleSidebar}>
               <BurgerMenu />
             </button>

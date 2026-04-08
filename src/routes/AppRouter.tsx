@@ -3,7 +3,7 @@ import Login from "../pages/Login/Login";
 import Register from "../pages/Register/Register";
 import PrivateRoute from "./PrivateRoute";
 import Dashboard from "../pages/Dashboard/Dashboard";
-import Order from "../pages/Order/Order";
+import Order from "../pages/Orders/Orders";
 import Products from "../pages/Products/Products";
 import Suppliers from "../pages/Suppliers/Suppliers";
 import Customers from "../pages/Customers/Customers";

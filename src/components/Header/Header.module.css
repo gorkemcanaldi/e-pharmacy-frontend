@@ -23,12 +23,18 @@
   display: flex;
   gap: 60px;
 }
+.burger_div {
+  display: none;
+}
 
 .burger {
   display: none;
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {
+  .burger_div {
+    display: flex;
+  }
   .burger {
     display: flex;
     margin-top: 6px;
@@ -44,6 +50,9 @@
 }
 
 @media (min-width: 320px) and (max-width: 767px) {
+  .burger_div {
+    display: flex;
+  }
   .burger {
     display: flex;
     margin-top: 6px;

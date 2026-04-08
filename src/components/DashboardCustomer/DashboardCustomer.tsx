@@ -4,7 +4,7 @@ type Customer = {
   name: string;
   email: string;
   spent: number;
-  photo: string;
+  photo?: string;
   image: string;
 };
 type DashboardCustomerProps = {

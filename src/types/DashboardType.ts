@@ -8,6 +8,7 @@ export type DashboardData = {
     name: string;
     image: string;
     email: string;
+    photo?: string;
     spent: number;
   }[];
   transactions: {
