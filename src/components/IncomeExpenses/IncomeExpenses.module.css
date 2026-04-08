@@ -3,9 +3,8 @@
   border-radius: 8px;
   background-color: var(--background-3);
   width: 630px;
-  border-collapse: separate; /* önemli */
-
-  height: 446.4px;
+  height: 100%;
+  border-collapse: separate;
 }
 
 .title {
@@ -38,7 +37,8 @@ td {
 }
 .typeIncome {
   background: rgba(89, 177, 122, 0.1);
-  border-radius: 4px;
+  border-radius: 40px;
+
   font-family: var(--font-family);
   font-weight: 500;
   font-size: 14px;
@@ -52,7 +52,8 @@ td {
 
 .typeExpense {
   background: rgba(232, 80, 80, 0.1);
-  border-radius: 4px;
+  border-radius: 40px;
+
   font-family: var(--font-family);
   font-weight: 500;
   font-size: 14px;
@@ -70,7 +71,8 @@ td {
   padding-top: 4px;
   padding: 4px 13px;
   background: rgba(29, 30, 33, 0.1);
-  border-radius: 4px;
+  border-radius: 40px;
+
   font-family: var(--font-family);
   margin-left: 20px;
   font-weight: 500;

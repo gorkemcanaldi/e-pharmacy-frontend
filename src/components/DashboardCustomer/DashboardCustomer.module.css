@@ -15,6 +15,7 @@
   border: 1px solid rgba(29, 30, 33, 0.1);
   border-radius: 8px;
   background: var(--background-3);
+  height: 460px;
 }
 
 .table_head_div th,

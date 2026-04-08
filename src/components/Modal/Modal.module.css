@@ -13,19 +13,26 @@
 .modal_container {
   background: #fff;
   border-radius: 8px;
-  width: 500px; /* boyutu buradan kontrol edebilirsin */
-  max-width: 90%;
-  padding: 20px;
+  width: 532px;
+  padding: 40px 32px 60px 24px;
 }
 
 .modal_header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid #ddd;
-  margin-bottom: 10px;
+  margin-bottom: 30px;
+  margin-left: 10px;
 }
 
-.modal_body {
-  padding: 10px 0;
+.modal_but {
+  background: none;
+  font-family: var(--font-family);
+
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+  position: relative;
+  bottom: 26px;
+  left: 14px;
 }
