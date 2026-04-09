@@ -3,6 +3,7 @@
   justify-content: space-between;
   align-items: center;
   margin-top: 75px;
+  margin-bottom: 20px;
 }
 .filter_div_ {
   display: flex;
@@ -42,32 +43,26 @@
   padding-left: 13px;
 }
 
-.add_div {
-  display: flex;
-  gap: 8px;
-  cursor: pointer;
-}
-
-.plus_div {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 42px;
-  height: 42px;
-  background: var(--accent);
-  border-radius: 60px;
-  color: var(--background-3);
-}
-
 .add_button {
   font-family: var(--font-family);
   font-weight: 500;
   font-size: 14px;
   line-height: 129%;
   color: var(--main-black);
-  border: none;
-  cursor: pointer;
+  border: 1px solid rgba(89, 177, 122, 0.5);
+  border-radius: 60px;
+  width: 196px;
+  height: 44px;
   background: var(--background-2);
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease-in,
+    0.2s ease-in;
+}
+
+.add_button:hover {
+  color: var(--background-3);
+  background: var(--accent);
 }
 
 .pagination {
@@ -90,19 +85,16 @@
 }
 
 .tableWrapper {
-  margin-top: 20px;
-  border: 1px solid rgba(29, 30, 33, 0.1);
   border-radius: 8px;
-
-  overflow: hidden;
+  width: 1262px;
 }
 
 .table {
-  width: 1260px;
+  width: 100%;
   height: 470px;
   background-color: var(--background-3);
-
   border-collapse: collapse;
+  border-bottom: 1px solid rgba(29, 30, 33, 0.1);
 }
 
 .head_info {
@@ -113,108 +105,39 @@
   color: rgba(29, 30, 33, 0.4);
 }
 
-caption {
-  padding: 20px;
-  text-align: left;
-  background-color: var(--background);
-  font-weight: 600;
-  color: rgba(29, 30, 33, 0.7);
-  font-family: var(--font-family);
-  font-size: 18px;
-  line-height: 133%;
-  color: var(--main-black);
-}
-
-.photo {
-  width: 36px;
-  height: 36px;
-}
-
-.name_photo {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.status_completed {
-  font-family: var(--font-family);
-  font-weight: 500;
-  font-size: 14px;
-  letter-spacing: -0.05em;
-  text-align: center;
-  color: var(--accent);
+.statusActive {
   background: rgba(89, 177, 122, 0.1);
-}
+  color: var(--accent);
+  border-radius: 4px;
 
-.status_confirmed {
-  font-family: var(--font-family);
+  text-align: center;
   font-weight: 500;
   font-size: 14px;
   letter-spacing: -0.05em;
-  text-align: center;
-  color: #8059e4;
-  background: rgba(128, 89, 228, 0.1);
 }
 
-.status_pending {
-  font-family: var(--font-family);
-  font-weight: 500;
-  font-size: 14px;
-  letter-spacing: -0.05em;
-  text-align: center;
-  color: #f79042;
-  background: rgba(247, 144, 66, 0.1);
-}
-
-.status_cancelled {
-  font-family: var(--font-family);
-  font-weight: 500;
-  font-size: 14px;
-  letter-spacing: -0.05em;
-  text-align: center;
-  color: var(--accent-2);
+.statusDeactive {
   background: rgba(232, 80, 80, 0.1);
-}
-
-.status_processing {
-  font-family: var(--font-family);
+  color: var(--accent-2);
+  border-radius: 4px;
   font-weight: 500;
   font-size: 14px;
   letter-spacing: -0.05em;
   text-align: center;
-  color: #70a6e8;
-  background: rgba(112, 166, 232, 0.1);
-}
-
-.status_shipped {
-  color: #ec441ac5;
-  background: rgba(175, 52, 22, 0.1);
-}
-
-.status_delivered {
-  color: #8a660398;
-  background: rgba(46, 204, 113, 0.1);
 }
 
 .edit_ {
   border: 1px solid rgba(89, 177, 122, 0.5);
   border-radius: 30px;
-  width: 32px;
-  height: 32px;
-  cursor: pointer;
-  padding: 8px;
-  margin-left: 10px;
-}
-.delete_ {
-  border: 1px solid rgba(232, 80, 80, 0.5);
-  border-radius: 30px;
-  width: 32px;
-  height: 32px;
-  padding: 8px;
-  margin-left: 8px;
+  width: 82px;
+  height: 34px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 113%;
+  color: var(--accent);
+  background-color: var(--background-3);
   cursor: pointer;
 }
-
 .modal_input {
   font-family: var(--font-family);
   font-weight: 400;
@@ -248,6 +171,7 @@ caption {
   border: none;
   margin-top: 40px;
   transition: background 0.2s ease-in;
+  cursor: pointer;
 }
 .modal_butt:hover {
   background: #3f945f;
@@ -260,12 +184,11 @@ caption {
   background: rgba(29, 30, 33, 0.1);
   border-radius: 60px;
   padding: 13px 50px;
-
+  cursor: pointer;
   border: none;
   color: rgba(29, 30, 33, 0.4);
   margin-top: 40px;
   margin-left: 8px;
-
   transition:
     background-color 0.2s ease-in,
     border 0.2s ease-in;

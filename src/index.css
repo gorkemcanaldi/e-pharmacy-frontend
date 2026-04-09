@@ -4,6 +4,9 @@
   box-sizing: border-box;
   font-family: "Inter", sans-serif;
 }
+button {
+  cursor: pointer;
+}
 
 :root {
   --main-black: #1d1e21;

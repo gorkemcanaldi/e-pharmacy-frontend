@@ -57,10 +57,10 @@ export default function Products() {
     try {
       if (selectedProduct) {
         const res = await updateProduct(accessToken, selectedProduct._id, data);
-        toast.success(res.message ?? "Ürün güncellendi");
+        toast.success(res.message ?? "product güncellendi");
       } else {
         const res = await productCreate(accessToken, data);
-        toast.success(res.message ?? "Ürün eklendi");
+        toast.success(res.message ?? "yeni product eklendi");
       }
       setOpen(false);
       setSelectedProduct(null);
@@ -91,7 +91,6 @@ export default function Products() {
 
     run();
   }, [accessToken, page]);
-  console.log(products);
   const emptyForm: ProductSchemaType = {
     name: "",
     suppliers: "",
@@ -135,7 +134,7 @@ export default function Products() {
       </div>
       <div className={style.tableWrapper}>
         <table className={style.table}>
-          <caption>All orders</caption>
+          <caption>All products</caption>
           <thead>
             <tr>
               <th className={style.head_info}>Product Info</th>

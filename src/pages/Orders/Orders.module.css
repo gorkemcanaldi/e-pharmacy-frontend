@@ -58,23 +58,22 @@
 
 .tableWrapper {
   margin-top: 20px;
-  border: 1px solid rgba(29, 30, 33, 0.1);
   border-radius: 8px;
-
+  background-color: var(--background-3);
   overflow: hidden;
 }
 
 .table {
   width: 1260px;
-
   border-collapse: collapse;
+  border-right: 1px solid rgba(29, 30, 33, 0.1);
+  border-bottom: 1px solid rgba(29, 30, 33, 0.1);
 }
 
 th,
 td {
   padding: 20px;
   text-align: left;
-  border-bottom: 1px solid rgba(29, 30, 33, 0.1);
   border-left: 1px solid rgba(29, 30, 33, 0.1);
   font-family: var(--font-family);
   font-weight: 500;

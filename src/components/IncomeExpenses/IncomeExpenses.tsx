@@ -16,7 +16,7 @@ export default function IncomeExpenses({ ie }: IncomeExpensesProps) {
   }
 
   return (
-    <div>
+    <div className={style.wrapper_div}>
       <table className={style.wrapper}>
         <caption className={style.title}>Income/Expenses</caption>
 

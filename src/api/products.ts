@@ -35,11 +35,11 @@ export const productCreate = async (
   return res.json();
 };
 
-export async function updateProduct(
+export const updateProduct = async (
   accessToken: string,
   productId: string,
   data: ProductSchemaType,
-) {
+) => {
   const res = await fetch(`${BASE_URL}/products/${productId}`, {
     method: "PUT",
     headers: {
@@ -49,12 +49,10 @@ export async function updateProduct(
     body: JSON.stringify(data),
   });
 
-  if (!res.ok) {
-    throw new Error("Failed to update product");
-  }
+  if (!res.ok) throw new Error("Failed to update product");
 
   return res.json();
-}
+};
 
 export async function deleteProduct(accessToken: string, productId: string) {
   const res = await fetch(`${BASE_URL}/products/${productId}`, {

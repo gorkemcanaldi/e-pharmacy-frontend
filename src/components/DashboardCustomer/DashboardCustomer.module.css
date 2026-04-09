@@ -12,15 +12,15 @@
 
 .tablos {
   border-collapse: collapse;
-  border: 1px solid rgba(29, 30, 33, 0.1);
+  border-bottom: 1px solid rgba(29, 30, 33, 0.1);
+  border-right: 1px solid rgba(29, 30, 33, 0.1);
   border-radius: 8px;
   background: var(--background-3);
-  height: 460px;
+  height: 468px;
 }
 
 .table_head_div th,
 .dess td {
-  border: 1px solid rgba(29, 30, 33, 0.1);
   padding: 18.4px;
   text-align: left;
 }
