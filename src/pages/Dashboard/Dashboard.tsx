@@ -54,7 +54,7 @@ export default function Dashboard() {
                 <span>
                   <AllSuppliers />
                 </span>
-                All products
+                All suppliers
               </p>
               <span className={style.met_span}>
                 {data?.metrics.totalSuppliers}
@@ -65,7 +65,7 @@ export default function Dashboard() {
                 <span>
                   <AllSuppliers />
                 </span>
-                All products
+                All customers
               </p>
               <span className={style.met_span}>
                 {data?.metrics.totalCustomers}

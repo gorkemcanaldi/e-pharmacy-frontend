@@ -18,15 +18,12 @@ function App() {
     if (!accessToken) return;
     if (timerSet.current) return;
     timerSet.current = true;
-    console.log("Refresh timer triggered");
     const timer = setTimeout(
       async () => {
-        console.log("Refresh timer triggered");
         try {
           const res = await refreshToken();
           setAccessToken(res.accessToken);
           toast.success("Oturum yenilendi (24h)");
-          console.log("refresh isteği ");
         } catch {
           toast.error("Oturum süresi doldu, tekrar giriş yapın");
           navigate("/login");

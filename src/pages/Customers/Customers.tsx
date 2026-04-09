@@ -33,7 +33,6 @@ export default function Customers() {
     };
     run();
   }, [accessToken, page]);
-  console.log(customers);
   return (
     <div>
       {loading || !customers ? (

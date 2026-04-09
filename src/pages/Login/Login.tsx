@@ -30,7 +30,6 @@ export default function Login() {
     try {
       const result = await loginUser(data);
       setAccessToken(result.accessToken);
-      console.log("Login result:", result);
       navigate("/dashboard");
       if (result) {
         toast.success("login success.");
