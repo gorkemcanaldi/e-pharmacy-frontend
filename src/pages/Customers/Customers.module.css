@@ -1,0 +1,114 @@
+.filter_div {
+  display: flex;
+  gap: 14px;
+  margin-top: 75px;
+}
+
+.filter_button {
+  background: var(--accent);
+  border-radius: 60px;
+  width: 116px;
+  height: 44px;
+  border: none;
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 129%;
+  color: var(--background-3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.filter_inp {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 150%;
+  border: 1px solid rgba(29, 30, 33, 0.1);
+  border-radius: 60px;
+  width: 224px;
+  height: 44px;
+  outline: none;
+  box-shadow: 0 -1px 5px 0 rgba(71, 71, 71, 0.05);
+  background: var(--background-3);
+  padding-left: 13px;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.pageDot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--background);
+  cursor: pointer;
+}
+
+.activeDot {
+  background: var(--accent);
+}
+
+.tableWrapper {
+  margin-top: 20px;
+  border-radius: 8px;
+  background-color: var(--background-3);
+  overflow: hidden;
+}
+
+.table {
+  width: 1260px;
+  border-collapse: collapse;
+  border-right: 1px solid rgba(29, 30, 33, 0.1);
+  border-bottom: 1px solid rgba(29, 30, 33, 0.1);
+}
+
+th,
+td {
+  padding: 20px;
+  text-align: left;
+  border-left: 1px solid rgba(29, 30, 33, 0.1);
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 113%;
+  color: var(--main-black);
+}
+
+.head_info {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 129%;
+  color: rgba(29, 30, 33, 0.4);
+}
+
+caption {
+  padding: 20px;
+  text-align: left;
+  background-color: var(--background);
+  font-weight: 600;
+  color: rgba(29, 30, 33, 0.7);
+  font-family: var(--font-family);
+  font-size: 18px;
+  line-height: 133%;
+  color: var(--main-black);
+}
+
+.photo {
+  width: 36px;
+  height: 36px;
+}
+
+.name_photo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}

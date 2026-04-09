@@ -33,7 +33,6 @@ export default function Orders() {
 
     run();
   }, [accessToken, page]);
-  console.log(orders);
   return (
     <div>
       {loading || !orders ? (

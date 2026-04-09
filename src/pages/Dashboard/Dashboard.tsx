@@ -29,7 +29,6 @@ export default function Dashboard() {
     };
     fetchDashboard();
   }, [accessToken]);
-  console.log(data);
   return (
     <div className={style.dashboard_}>
       {loading || !data ? (
